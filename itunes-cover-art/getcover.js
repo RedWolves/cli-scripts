@@ -24,17 +24,17 @@ var logging = program.verbose ? true : false
 var searchTerm = "term=" + encodeURIComponent(program.args);
 log.out("Searching for: " + program.args, "gray", true);
 var media = "";
-var country = "country=US&";
+var country = "&country=US";
 
 if (program.media) {
   media = "&media=" + program.media;
 } 
 
 if (program.country) {
-  country = "country=" + program.country;
+  country = "&country=" + program.country;
 }
 
-queryString = queryString + searchTerm + media;
+queryString = queryString + searchTerm + media + country;
 
 log.out("Searching iTunes: " + iTunesSearchAPI + queryString, "gray", logging);
 
@@ -60,7 +60,14 @@ request(iTunesSearchAPI + queryString, function (error, response, body) {
     c.queue(result.results[0].trackViewUrl);
     
   } else {
-    log.out(error, "red", true);
+    if (response.statusCode == 400) {
+      log.out("HTTP Status 400, you've most likely provided an invalid option.", "red", true);
+    } else {
+      log.out("HTTP Status: " + response.statusCode);
+    }
+    if (error) {
+      log.out("An error occured, " + error, "red", true);
+    }
   }
 });
 
