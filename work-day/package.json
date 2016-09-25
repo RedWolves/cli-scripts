@@ -1,0 +1,19 @@
+{
+  "name": "work-day",
+  "version": "0.1.0",
+  "description": "A CLI-tool to open all work sites at once.",
+  "main": "index.js",
+  "bin": {
+    "work-day": "./index.js"
+  },
+  "author": "Ralph Whitbeck",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "open": "0.0.5",
+    "opn": "^4.0.2",
+    "shelljs": "^0.7.4"
+  }
+}

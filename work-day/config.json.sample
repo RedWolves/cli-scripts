@@ -1,0 +1,22 @@
+{
+  "apps": [
+    {
+      "name": "Google Chrome",
+      "app": "google chrome"
+    },
+    {
+      "name": "HipChat",
+      "app": "hipchat"
+    }
+  ],
+  "sites": [
+    {
+      "name": "GMail",
+      "url": "https://mail.google.com"
+    },
+    {
+      "name": "Google Calendar",
+      "url": "https://calendar.google.com"
+    }
+  ]
+}
