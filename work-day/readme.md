@@ -46,9 +46,9 @@ Opening Google Calendar.
 
 ```
 $ work-day -e
-Quiting apps.
-Quiting Google Chrome.
-Quiting HipChat.
+Quitting apps.
+Quitting Google Chrome.
+Quitting HipChat.
 Have a great evening!!
 ```
 

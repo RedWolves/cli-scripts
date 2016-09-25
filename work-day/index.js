@@ -23,7 +23,7 @@ var config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json')).toS
 if (logging) { console.log(config);}
 
 if (program.all) {
-  log.out("Quiting all open apps.", "cyan", true);
+  log.out("Quitting all open apps.", "cyan", true);
   for (var index = 0; index <= config.apps.length-1;index++) {
     exec('osascript -e \'quit app "' + config.apps[index].app + '"\'', {silent: true});
   }
@@ -45,7 +45,7 @@ if (program.all) {
     }
   } else {
     //end of the day, quit our apps.
-    log.out("Quiting apps.", "gray", true);
+    log.out("Quitting apps.", "gray", true);
     for (var index = 0; index <= config.apps.length-1;index++) {
       log.out("Quiting " + config.apps[index].name + ".", "gray", true);
       exec('osascript -e \'quit app "' + config.apps[index].app + '"\'', {silent: true});
