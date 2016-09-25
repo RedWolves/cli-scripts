@@ -25,7 +25,7 @@ npm install -g
 
 ## Set up your configuration
 
-In the installation directory, `/usr/local/lib/node_modules/work_day` copy teh config.json.sample to config.json and add the apps and sites you would like opened.
+In the installation directory, `/usr/local/lib/node_modules/work_day` copy the config.json.sample to config.json and add the apps and sites you would like opened.
 
 ## Start you're day quickly
 
