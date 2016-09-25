@@ -13,6 +13,7 @@ program
   .usage('')
   .option("-v, --verbose", "Enable verbose logging", function(val) { return true; })
   .option("-a, --all", "Quit all open apps", function(val) { return true; })
+  .option("-s, --sleep", "Put the computer to sleep.", function(val) { return true; })
   .option("-e, --end", "It's the end of the workday. Quit all work related apps.", function(val) {return true;})
   .parse(process.argv);
 
@@ -53,5 +54,7 @@ if (program.all) {
   }
 }
 
-
-
+if (program.sleep) {
+  log.out("Going to sleep now. Zzzzz.", "yellow", true);
+  exec("pmset sleepnow");
+}
