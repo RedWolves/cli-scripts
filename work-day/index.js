@@ -30,7 +30,7 @@ if (program.all) {
   exec("open -a QuitEverything");
   exec("clear");
 } else {
-  if (!program.end) {
+  if (!program.end && !program.sleep) {
     log.out("Good morning. Let's get productive!!", "cyan", true);
     log.out("Opening apps.", "gray", true);
     for (var index = 0; index <= config.apps.length-1;index++) {
@@ -43,7 +43,7 @@ if (program.all) {
       log.out("Opening " + config.sites[index].name + ".", "gray", true);
       open(config.sites[index].url);
     }
-  } else {
+  } else if (program.end) {
     //end of the day, quit our apps.
     log.out("Quitting apps.", "gray", true);
     for (var index = 0; index <= config.apps.length-1;index++) {
